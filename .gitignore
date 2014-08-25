@@ -1,0 +1,15 @@
+### Laravel4 template
+/bootstrap/compiled.php
+.env.*.php
+.env.php
+
+### Default
+/.idea
+/.sass-cache
+/bower
+/node_modules
+/vendor
+.DS_Store
+_ide_helper.php
+composer.lock
+Thumbs.db

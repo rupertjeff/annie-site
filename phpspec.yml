@@ -1,0 +1,5 @@
+suites:
+  annie_suite:
+    namespace: AnnieDigital
+    psr4_prefix: AnnieDigital
+    spec_path: app/tests

@@ -1,0 +1,11 @@
+{
+  "name": "anniessite",
+  "dependencies": {
+    "angular": "~1.2.23",
+    "ng-file-upload": "~1.6.5",
+    "bootstrap": "~3.2.0",
+    "underscore": "~1.6.0",
+    "angular-route": "~1.2.23",
+    "angular-resource": "~1.2.23"
+  }
+}
