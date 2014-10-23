@@ -1,7 +1,10 @@
 <?php namespace AnnieDigital\Support;
 
 use AnnieDigital\Contracts\Repository as RepositoryInterface;
-use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Contracts\ArrayableInterface;
 use InvalidArgumentException;
 
 /**
@@ -9,7 +12,7 @@ use InvalidArgumentException;
  *
  * @package AnnieDigital\Support
  */
-class Repository implements RepositoryInterface {
+abstract class Repository implements RepositoryInterface {
 
 	/**
 	 * @var string
@@ -25,24 +28,68 @@ class Repository implements RepositoryInterface {
 	protected $sort = 'asc';
 
 	/**
+	 * @param Model $item
+	 *
+	 * @return Entity
+	 */
+	abstract protected function transform(Model $item);
+
+	/**
+	 * @param array|ArrayableInterface $items
+	 *
+	 * @return Collection
+	 */
+	protected function multiTransform($items = [])
+	{
+		if ( ! $items instanceof Collection)
+		{
+			if ($items instanceof ArrayableInterface)
+			{
+				$items = $items->toArray();
+			}
+
+			$items = new Collection($items);
+		}
+
+		$transformed = [];
+		foreach ($items as $item)
+		{
+			$transformed[] = $this->transform($item);
+		}
+
+		return $transformed;
+	}
+
+	/**
 	 * @param array $columns
 	 *
-	 * @return mixed
+	 * @return Collection
 	 */
 	public function all(array $columns = ['*'])
 	{
-		return $this->newQuery()->get($columns);
+		return $this->multiTransform($this->newQuery()->get($columns));
 	}
 
 	/**
 	 * @param mixed $id
 	 * @param array $columns
 	 *
-	 * @return \Illuminate\Support\Collection|static
+	 * @return Model
+	 */
+	public function get($id, array $columns = ['*'])
+	{
+		return $this->createModel()->find($id, $columns);
+	}
+
+	/**
+	 * @param mixed $id
+	 * @param array $columns
+	 *
+	 * @return Collection
 	 */
 	public function find($id, array $columns = ['*'])
 	{
-		return $this->createModel()->find($id, $columns);
+		return $this->multiTransform($this->get($id, $columns));
 	}
 
 	/**
@@ -60,7 +107,61 @@ class Repository implements RepositoryInterface {
 	}
 
 	/**
-	 * @return \Illuminate\Database\Eloquent\Model
+	 * @param array $fields
+	 *
+	 * @return Entity
+	 */
+	public function create(array $fields)
+	{
+		$item = $this->createModel()->fill($fields);
+
+		$item->save();
+
+		return $this->transform($item);
+	}
+
+	/**
+	 * @param mixed $id
+	 * @param array $fields
+	 *
+	 * @return Entity
+	 */
+	public function update($id, array $fields)
+	{
+		$item = $this->get($id);
+
+		$this->setData($item, $fields);
+
+		$item->save();
+
+		return $this->transform($item);
+	}
+
+	/**
+	 * @param Model $item
+	 * @param array        $fields
+	 *
+	 * @return void
+	 */
+	abstract protected function setData(Model $item, array $fields);
+
+	/**
+	 * @param mixed $id
+	 *
+	 * @return Entity
+	 * @throws \Exception
+	 */
+	public function delete($id)
+	{
+		$item = $this->get($id);
+
+		$item->delete();
+
+		return $this->transform($item);
+	}
+
+	/**
+	 * @return Model
 	 */
 	protected function createModel()
 	{

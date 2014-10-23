@@ -30,4 +30,26 @@ interface Repository {
 	 */
 	public function order($by, $sort = 'asc');
 
+	/**
+	 * @param array $fields
+	 *
+	 * @return \AnnieDigital\Support\Entity
+	 */
+	public function create(array $fields);
+
+	/**
+	 * @param mixed $id
+	 * @param array $fields
+	 *
+	 * @return \AnnieDigital\Support\Entity
+	 */
+	public function update($id, array $fields);
+
+	/**
+	 * @param mixed $id
+	 *
+	 * @return \AnnieDigital\Support\Entity
+	 */
+	public function delete($id);
+
 }

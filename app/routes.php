@@ -11,14 +11,23 @@
 |
 */
 
-Route::group(['prefix' => 'admin'], function ()
-{
-	Route::group(['prefix' => 'partials'], function ()
-	{
-		Route::get('tags', ['uses' => 'AdminPartialsController@tags']);
-	});
+//Route::group(['prefix' => 'admin'], function ()
+//{
+//	Route::group(['prefix' => 'partials'], function ()
+//	{
+//		Route::get('tags', ['uses' => 'AdminPartialsController@tags']);
+//	});
+//
+//	Route::get('/', ['uses' => 'MainController@admin', 'as' => 'admin']);
+//});
 
-	Route::get('/', ['uses' => 'MainController@admin', 'as' => 'admin']);
+Route::group(['prefix' => 'api/v1'], function ()
+{
+	Route::get('tags', ['uses' => 'AnnieDigital\Api\TagController@index', 'as' => 'tags.index']);
+
+	Route::post('contact/store', ['uses' => 'AnnieDigital\Api\ContactController@store', 'as' => 'contact.store']);
 });
 
-Route::get('/', ['uses' => 'MainController@index', 'as' => 'home']);
+Route::get('/', [
+	'uses' => 'MainController@index', 'as' => 'home',
+]);

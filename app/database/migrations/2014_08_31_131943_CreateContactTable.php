@@ -3,7 +3,10 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTagTable extends Migration {
+/**
+ * Class CreateContactTable
+ */
+class CreateContactTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,16 +15,16 @@ class CreateTagTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('tags', function (Blueprint $table)
+		Schema::create('contacts', function (Blueprint $table)
 		{
 			$table->increments('id');
 
-			$table->string('name')->unique();
-			$table->string('uri');
-			$table->integer('sort')->default(0)->index();
+			$table->string('name');
+			$table->string('email');
+			$table->text('comments');
 
-			$table->softDeletes();
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 
@@ -32,7 +35,7 @@ class CreateTagTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('tags');
+		Schema::dropIfExists('contacts');
 	}
 
 }
