@@ -1,5 +1,11 @@
 @extends('template')
 
+@section('scripts')
+	@parent
+
+	{{ HTML::script('js/main.js') }}
+@stop
+
 @section('content')
 
 	@include('partials.intro')
