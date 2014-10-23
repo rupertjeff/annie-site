@@ -8,6 +8,8 @@
 /.sass-cache
 /bower
 /node_modules
+/public/css
+/public/js
 /vendor
 .DS_Store
 _ide_helper.php
