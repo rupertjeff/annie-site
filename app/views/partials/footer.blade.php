@@ -6,6 +6,6 @@
 		<li class="icon deviantart">{{ link_to('//deviantart.com', 'deviantArt') }}</li>
 	</ul>
 	<div class="copyright">
-		<p>&copy; Annie Lu {{ date('Y') }} All Rights Reserved</p>
+		<p>&copy; Annie Lu {{ date('Y') }} <?php include("images/bow-bottom.svg"); ?> All Rights Reserved</p>
 	</div>
 </footer>

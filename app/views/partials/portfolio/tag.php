@@ -1,6 +1,3 @@
-<li class="tag js-tag js-tag-{{ tag.uri }}" ng-repeat="tag in tags">
-	<a href="#{{ tag.uri }}">
-		<img src="{{ tag.icon }}" alt="{{ tag.name }}" />
-		{{ tag.name }}
-	</a>
-</li>
+<a class="tag {{ tag.uri }} js-tag js-tag-{{ tag.uri }}" href="#{{ tag.uri }}" ng-repeat="tag in tags">
+	{{ tag.name }}
+</a>

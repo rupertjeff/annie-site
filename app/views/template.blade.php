@@ -5,6 +5,8 @@
 		<title>@yield('pageTitle', 'AnnieDigital')</title>
 
 		@section('styles')
+		{{ HTML::style('http://fonts.googleapis.com/css?family=Molle:400italic|Raleway:400,700') }}
+		{{ HTML::style('css/normalize.css') }}
 		{{ HTML::style('css/main.css') }}
 		@show
 		@section('scripts')

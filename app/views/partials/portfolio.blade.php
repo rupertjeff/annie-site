@@ -1,16 +1,16 @@
 <section id="portfolio" ng-controller="PortfolioController">
-	<ol id="tags" class="tags">
+	<nav id="portfolio-filters">
 		@include('partials.portfolio.tag')
-	</ol>
+	</nav>
 	<div id="projects" class="project-groups">
 		@include('partials.portfolio.project-group')
 	</div>
 	<noscript>
-		<ol id="tags" class="tags">
+		<nav id="portfolio-filters">
 		@foreach ($tags as $tag)
-			<li class="tag js-tag js-tag-{{ $tag->uri }}"><a href="#{{ $tag->uri }}">{{{ $tag->name }}}</a></li>
+			<a class="tag {{ $tag->uri }} js-tag js-tag-{{ $tag->uri }}" href="#{{ $tag->uri }}">{{{ $tag->name }}}</a>
 		@endforeach
-		</ol>
+		</nav>
 		<div id="projects" class="project-groups">
 		@foreach ($tags as $tag)
 			<div id="{{ $tag->uri }}" class="project-group">
@@ -21,7 +21,7 @@
 			@endforeach
 			</div>
 			@if (8 < $tag->projects->count())
-			<button class="load-more js-load-more">More Please!</button>
+			<button class="btn btn--cta js-load-more">More Please!</button>
 			@endif
 		@endforeach
 		</div>
