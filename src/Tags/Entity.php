@@ -48,12 +48,12 @@ class Entity extends BaseEntity {
 	public function toArray()
 	{
 		return [
-			'id'       => $this->id,
+			'id'       => (int)$this->id,
 			'name'     => $this->name,
 			'uri'      => $this->uri,
 			'icon'     => $this->icon,
 			'projects' => $this->projects,
-			'sort'     => $this->sort,
+			'sort'     => (int)$this->sort,
 		];
 	}
 

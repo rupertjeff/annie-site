@@ -25,6 +25,8 @@ Route::group(['prefix' => 'api/v1'], function ()
 {
 	Route::get('tags', ['uses' => 'AnnieDigital\Api\TagController@index', 'as' => 'tags.index']);
 
+	Route::get('projects', ['uses' => 'AnnieDigital\Api\ProjectController@index', 'as' => 'projects.index']);
+
 	Route::post('contact/store', ['uses' => 'AnnieDigital\Api\ContactController@store', 'as' => 'contact.store']);
 });
 

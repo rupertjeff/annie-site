@@ -28,6 +28,7 @@ class Repository extends BaseRepository implements Tags {
 			'projects' => function ($query)
 			{
 				$query->orderBy('sort', 'asc');
+				$query->with('images');
 			}
 		]);
 
@@ -51,7 +52,7 @@ class Repository extends BaseRepository implements Tags {
 	 *
 	 * @return Entity
 	 */
-	protected function transform(Model $item)
+	public function transform($item)
 	{
 		return new Entity(
 			(int)$item->id,
@@ -69,7 +70,7 @@ class Repository extends BaseRepository implements Tags {
 	 *
 	 * @return void
 	 */
-	protected function setData(Model $item, array $fields)
+	protected function setData($item, array $fields)
 	{
 		$item->name  = $fields['name'];
 		$item->uri   = $fields['uri'];
