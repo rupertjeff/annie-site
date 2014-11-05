@@ -5,7 +5,7 @@
 	<div id="projects" class="project-groups">
 		@include('partials.portfolio.project-group')
 	</div>
-	<noscript>
+	{{--<noscript>
 		<nav id="portfolio-filters">
 		@foreach ($tags as $tag)
 			<a class="tag {{ $tag->uri }} js-tag js-tag-{{ $tag->uri }}" href="#{{ $tag->uri }}">{{{ $tag->name }}}</a>
@@ -25,5 +25,5 @@
 			@endif
 		@endforeach
 		</div>
-	</noscript>
+	</noscript>--}}
 </section>
