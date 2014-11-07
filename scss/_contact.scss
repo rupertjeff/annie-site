@@ -1,0 +1,68 @@
+#contact{
+	padding: 5% 10%;
+	background-color: #5f4c4f;
+	color: #fffefe;
+	line-height: 20 / 9 * 1em;
+	text-align: center;
+
+	h1{
+		color: $white;
+	}
+
+	.container{
+		max-width: 33em;
+	}
+
+}
+
+.contact-form{
+	position: relative;
+
+	text-align: left;
+
+	&::before, &::after{
+		position: absolute;
+
+		color: $pink;
+		font-family: 'Molle', cursive;
+		font-size: 5em;
+		line-height: 1em;
+	}
+
+	&::before
+	{
+		content: '“';
+
+		top: -0.125em;
+		left: -0.45em;
+	}
+
+	&::after{
+		content: '”';
+
+		bottom: 0.15em;
+		right: -0.35em;
+	}
+}
+
+.input-inline{
+	width: 50%;
+	border: 0;
+	border-bottom: 1px solid $pink;
+
+	background: transparent;
+	color: #fffefe;
+}
+
+.comments{
+	box-sizing: border-box;
+	width: 100%;
+	border: 1px solid $pink;
+	resize: vertical;
+
+	background: transparent;
+}
+
+.actions{
+	text-align: right;
+}

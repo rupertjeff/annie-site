@@ -1,38 +1,78 @@
 function PortfolioController($scope, Tags, Projects)
 {
-	$scope.tags = [
-		{
-			'name': 'Web',
-			'uri': 'web',
-			'icon': '/img/tags/web.svg',
-			'projects': [
-				{
-					'name': 'Project 1',
-					'description': 'Some project',
-					'image': '/img/projects/project-1.jpg',
-					'thumb': '/img/projects/thumbs/project-1.jpg'
-				}
-			]
-		},
-		{
-			'name': 'Mobile',
-			'uri': 'mobile',
-			'icon': '/img/tags/mobile.svg',
-			'projects': [
-				{
-					'name': 'Mobile Project 1',
-					'description': 'Some other project',
-					'image': '/img/projects/project-2.jpg',
-					'thumb': '/img/projects/thumbs/project-2.jpg'
-				}
-			]
-		}
-	];
-	$scope.currentTag = $scope.tags[0];
+	//import('includes/tags.js');
+	$scope.currentImage = null;
 
 	$scope.switchTag = function (tag)
 	{
 		$scope.currentTag = tag;
+	};
+
+	$scope.switchProject = function (project)
+	{
+		if ($scope.isCurrentProject(project))
+		{
+			$scope.clearProject();
+		}
+		else
+		{
+			$scope.currentProject = project;
+
+			$scope.switchImage(project.images[0]);
+		}
+	};
+
+	$scope.clearProject = function ()
+	{
+		$scope.currentProject = null;
+	};
+
+	$scope.previousImage = function ()
+	{
+		var images = $scope.currentProject.images,
+			currentIndex = _.indexOf(images, $scope.currentImage),
+			nextImage = currentIndex - 1;
+
+		if (0 > nextImage)
+		{
+			nextImage = images.length - 1;
+		}
+
+		$scope.switchImage(images[nextImage]);
+	};
+
+	$scope.nextImage = function ()
+	{
+		var images = $scope.currentProject.images,
+			currentIndex = _.indexOf(images, $scope.currentImage),
+			nextImage = currentIndex + 1;
+
+		if (images.length <= nextImage)
+		{
+			nextImage = 0;
+		}
+
+		$scope.switchImage(images[nextImage]);
+	};
+
+	$scope.switchImage = function (image)
+	{
+		$scope.currentImage = image;
+	};
+
+	$scope.isCurrentTag = function (tag)
+	{
+		return $scope.currentTag === tag;
+	};
+
+	$scope.isCurrentProject = function (project)
+	{
+		return $scope.currentProject === project;
+	};
+
+	$scope.isCurrentImage = function (image)
+	{
+		return $scope.currentImage === image;
 	};
 
 	//Tags.query(function (response)

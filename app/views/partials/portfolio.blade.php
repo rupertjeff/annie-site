@@ -1,8 +1,8 @@
-<section id="portfolio" ng-controller="PortfolioController">
-	<nav id="portfolio-filters">
+<section class="portfolio" id="portfolio" ng-controller="PortfolioController">
+	<nav class="portfolio-filters" id="portfolio-filters">
 		@include('partials.portfolio.tag')
 	</nav>
-	<div id="projects" class="project-groups">
+	<div class="project-groups" id="projects">
 		@include('partials.portfolio.project-group')
 	</div>
 	{{--<noscript>

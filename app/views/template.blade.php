@@ -10,9 +10,12 @@
 		{{ HTML::style('css/main.css') }}
 		@show
 		@section('scripts')
+		{{ HTML::script('js/vendor/jquery/jquery.min.js') }}
+		{{ HTML::script('js/vendor/underscore/underscore.js') }}
 		{{ HTML::script('js/vendor/angular/angular.min.js') }}
 		{{ HTML::script('js/vendor/angular/angular-resource.min.js') }}
 		{{ HTML::script('js/vendor/angular/angular-route.min.js') }}
+		{{ HTML::script('js/vendor/angular/angular-sanitize.min.js') }}
 		@show
 	</head>
 

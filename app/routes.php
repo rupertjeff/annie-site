@@ -30,6 +30,12 @@ Route::group(['prefix' => 'api/v1'], function ()
 	Route::post('contact/store', ['uses' => 'AnnieDigital\Api\ContactController@store', 'as' => 'contact.store']);
 });
 
+Route::group(['prefix' => 'partials'], function ()
+{
+	Route::get('details-default', ['uses' => 'PartialsController@detailsDefault']);
+	Route::get('details-web', ['uses' => 'PartialsController@detailsWeb']);
+});
+
 Route::get('/', [
 	'uses' => 'MainController@index', 'as' => 'home',
 ]);

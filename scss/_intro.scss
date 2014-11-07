@@ -1,0 +1,82 @@
+.intro{
+	padding: 0 10%;
+	background: url('../images/background.jpg') top center no-repeat #fdd6d5 fixed;
+	background-size: cover;
+	color: #fff;
+	font-size: 1.2em/1.28;
+	text-align: center;
+
+	@media screen and (min-width: 100.0625em){
+		//test multiple css gradient + image as background
+		background-color: #f36d8f;
+		background-image:
+			url('../images/dots.png'),
+			radial-gradient(ellipse at 70% 20%, rgba(240,83,146,1) 0%, rgba(249,129,157,1) 40%, rgba(254,183,199,1) 67%, rgba(252,242,230,1) 100%);
+		background-position: bottom center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+
+	// Needs Modernizr
+	.no-svg &{
+		.container::before{
+			content: url('../images/bow-top.png');
+			display: block;
+			padding-top: 1.25em;
+		}
+
+		.container::after{
+			content: url('../images/bow-bottom.png');
+			display: block;
+			padding-bottom: 1.25em;
+		}
+	}
+
+	h1{
+		margin: 0;
+		text-indent: -10%;
+
+		&::before{
+			content: 'bird';
+			display: inline-block;
+			width: 12%;
+			padding: 4% 1% 0 0;
+			overflow: hidden;
+			background: url('../images/bird.svg') top right no-repeat;
+			background-size: contain;
+			text-indent: 100%;
+		}
+
+	}
+
+	h2{
+		margin: 0.625em 0;
+		font-weight: 400;
+	}
+
+	p{
+		padding: 0;
+		margin: 0 0 1.625em 0;
+
+		@media screen and (min-width: 45em){
+			padding: 0 10%;
+		}
+
+		@media screen and (min-width: 57.5em){
+			padding: 0 25%;
+		}
+
+	}
+
+	hr{
+		display: block;
+		height: 100px;
+		border: 0;
+		margin: 1.5em 0 0 0;
+		background: url('../images/whitedot.png') top center repeat-y transparent;
+
+		@media screen and (min-width: 57.5em){
+			height: 150px;
+		}
+	}
+}
