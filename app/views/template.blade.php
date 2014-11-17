@@ -3,6 +3,8 @@
 
 	<head>
 		<title>@yield('pageTitle', 'AnnieDigital')</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="favicon.ico">
 
 		@section('styles')
 		{{ HTML::style('http://fonts.googleapis.com/css?family=Molle:400italic|Raleway:400,700') }}

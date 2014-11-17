@@ -36,6 +36,13 @@ Route::group(['prefix' => 'partials'], function ()
 	Route::get('details-web', ['uses' => 'PartialsController@detailsWeb']);
 });
 
+Route::get('resume', ['as' => 'resume', function ()
+{
+	$file = realpath(__DIR__ . '/../annie-lu-resume.pdf');
+
+	return Response::download($file);
+}]);
+
 Route::get('/', [
 	'uses' => 'MainController@index', 'as' => 'home',
 ]);

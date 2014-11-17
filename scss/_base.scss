@@ -45,6 +45,17 @@ h1{
 	}
 }
 
+.btn--pink{
+	border-color: $pink;
+	color: $pink;
+
+	&:hover, &:active{
+		background-image: linear-gradient(to top, transparentize($pink, 0.7) 0%, transparentize($pink, 0.7) 100%);
+		border-color: darken($pink, 10%);
+		color: darken($pink, 10%);
+	}
+}
+
 .bow{
 	display: inline-block;
 	width: 8%;
