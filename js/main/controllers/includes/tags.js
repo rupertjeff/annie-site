@@ -187,6 +187,26 @@ $scope.tags = [
 		'uri': 'photo',
 		'projects': [
 			{
+				'title': 'IEM San Jose 2014 Trophy',
+				'image': '/img/projects/photos/18_iemsj1.jpg',
+				'thumb': '/img/projects/photos/thumbs/18_iemsj1_tb.jpg'
+			},
+			{
+				'title': 'IEM San Jose 2014 Jaedong Interview',
+				'image': '/img/projects/photos/19_iemsj2.jpg',
+				'thumb': '/img/projects/photos/thumbs/19_iemsj2_tb.jpg'
+			},
+			{
+				'title': 'BlizzCon 2014 Crowd Shot',
+				'image': '/img/projects/photos/16_blizzcon1.jpg',
+				'thumb': '/img/projects/photos/thumbs/16_blizzcon1_tb.jpg'
+			},
+			{
+				'title': 'BlizzCon 2014 WCS Championship Trophy',
+				'image': '/img/projects/photos/17_blizzcon2.jpg',
+				'thumb': '/img/projects/photos/thumbs/17_blizzcon2_tb.jpg'
+			},
+			{
 				'title': 'Red Bull Battlegrounds: Washington',
 				'image': '/img/projects/photos/01_RBBG1.jpg',
 				'thumb': '/img/projects/photos/thumbs/01_RBBG1_tb.jpg'
@@ -260,26 +280,6 @@ $scope.tags = [
 				'title': 'Close-Up Portrait',
 				'image': '/img/projects/photos/15_portrait4.jpg',
 				'thumb': '/img/projects/photos/thumbs/15_portrait4_tb.jpg'
-			},
-			{
-				'title': 'BlizzCon 2014 Crowd Shot',
-				'image': '/img/projects/photos/16_blizzcon1.jpg',
-				'thumb': '/img/projects/photos/thumbs/16_blizzcon1_tb.jpg'
-			},
-			{
-				'title': 'BlizzCon 2014 WCS Championship Trophy',
-				'image': '/img/projects/photos/17_blizzcon2.jpg',
-				'thumb': '/img/projects/photos/thumbs/17_blizzcon2_tb.jpg'
-			},
-			{
-				'title': 'IEM San Jose 2014 Trophy',
-				'image': '/img/projects/photos/18_iemsj1.jpg',
-				'thumb': '/img/projects/photos/thumbs/18_iemsj1_tb.jpg'
-			},
-			{
-				'title': 'IEM San Jose 2014 Jaedong Interview',
-				'image': '/img/projects/photos/19_iemsj2.jpg',
-				'thumb': '/img/projects/photos/thumbs/19_iemsj2_tb.jpg'
 			}
 		]
 	},
