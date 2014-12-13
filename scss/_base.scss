@@ -30,6 +30,10 @@ h1{
 	}
 }
 
+button.btn{
+	line-height: 1.28;
+}
+
 .btn--cta{
 	padding: .625em 2em;
 	border: 1px solid $white;
@@ -95,4 +99,6 @@ h1{
 	margin: 0 auto;
 }
 
-
+:-moz-ui-invalid:not(output){
+	box-shadow: none;
+}
