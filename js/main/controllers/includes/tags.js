@@ -31,6 +31,73 @@ $scope.tags = [
 						'image': '/img/projects/web/palmer/05_palmersquare_wireframes.jpg',
 						'alt': 'Palmer Square wireframes'
 					}
+				],
+				'problem': {
+					'image': {
+						'file': '/img/projects/web/palmer/new/01-old-site.png',
+						'alt': 'The old website for Palmer Square'
+					},
+					'text': {
+						'tag': 'The Problem',
+						'title':   'Original Site',
+						'content': '<p>The original Palmer Square site was done in 2011 or earlier, and the layout definitely felt dated. The background patterns and muted color are very reminiscent of the 2000’s era, and it was not mobile friendly. The top of the page featured an ad which leads the user to a completely different site. There is no clear indication as to what Palmer Square is about, or what they can offer a customer.</p><p>The challenge was to create a fresh and modern design that is user friendly for the consumers on the go and establishes the Palmer Square branding, which focuses on its unique shopping and dining experience.</p>'
+					}
+				},
+				'process': [
+					{
+						'text': {
+							'tag': 'The Process',
+							'title': 'Sketches, Wireframes, Style Tiles &amp; Prototype',
+							'content': '<p>With a clear goal in mind, the design process started with simple sketches in order to establish content hierarchy. What’s the goal of each page? What’s the most important item on the page? After we got answers for those questions, wireframes were produced using Axure. A branded style tile was also created featuring common elements that would be used throughout the site.</p><p>By combining the wireframes and style guides, we then moved into a in-browser prototype in order to show some of the responsive behaviors.</p>'
+						},
+						'image': {
+							'file': '/img/projects/web/palmer/new/02-ipad-tile.png',
+							'alt': 'The Palmer Square style tile on an iPad'
+						}
+					},
+					{
+						'first': {
+							'file': '/img/projects/web/palmer/new/03-sketches.jpg',
+							'alt': 'Sketches from the brainstorming sessions'
+						},
+						'second': {
+							'file': '/img/projects/web/palmer/new/04-wireframes.jpg',
+							'alt': 'Wireframes produced from the sketches'
+						}
+					},
+					{
+						'first': {
+							'file': '/img/projects/web/palmer/new/05-widgets.jpg',
+							'alt': 'Site widgets'
+						},
+						'second': {
+							'file': '/img/projects/web/palmer/new/06-widgets.jpg',
+							'alt': 'Site widgets'
+						}
+					}
+				],
+				'solution': [
+					{
+						'image': {
+							'file': '/img/projects/web/palmer/new/07-iphone-final.png',
+							'alt': 'The final low resolution design'
+						},
+						'text': {
+							'tag': 'The Solution',
+							'title': 'Simple Store Directory',
+							'content': '<p>Palmer Square is all about its retail stores. A mobile friendly Stores and Restaurants directory makes shopping easy on the go.</p>'
+						}
+					},
+					{
+						'text': {
+							'title': 'Fresh, Modern, Visual',
+							'content': '<p>Strong branded visual and content hierarchy quickly establishes what Palmer Square is all about &ndash; a unique location for shopping and dining.</p>'
+						},
+						'image': {
+							'file': '/img/projects/web/palmer/new/08-laptop-final.png',
+							'alt': 'The final high resolution design'
+						}
+					}
 				]
 			},
 			{
