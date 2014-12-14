@@ -178,6 +178,86 @@ $scope.tags = [
 						'alt': 'Studio’s Insight CLP Subpage'
 					}
 				]
+			},
+			{
+				'client': 'Internal Studio',
+				'title': 'Audio Visual Team Microsite',
+				'description': '<p>When the Studio’s Audio Visual team needed a microsite to demonstrate their capabilities, we wanted to give them something visual and to the point. The page highlights some key services and has a convenient contact form side by side with the content, making getting in touch with the studio easy as pie.</p>',
+				'image': '/img/projects/web/av/AV_small.jpg',
+				'thumb': '/img/projects/web/thumbs/09_av_tb.jpg',
+				'images': [
+					{
+						'image': '/img/projects/web/av/01_av_home.png',
+						'alt': 'A/V Team’s Homepage'
+					},
+					{
+						'image': '/img/projects/web/av/02_av_home.png',
+						'alt': 'More of A/V Team’s Homepage'
+					},
+					{
+						'image': '/img/projects/web/av/03_av_gallery.png',
+						'alt': 'A/V Team’s Gallery Page'
+					}
+				]
+			},
+			{
+				'client': 'All-Ways Forwarding',
+				'title': 'Responsive Redesign',
+				'description': '<p>Responsive Design for All-Ways, an all-service freight company.</p>',
+				'image': '/img/projects/web/allways/allways_phone.png',
+				'thumb': '/img/projects/web/thumbs/10_allways_tb.jpg',
+				'images': [
+					{
+						'image': '/img/projects/web/allways/01_allways_home.png',
+						'alt': 'All-Ways’ Homepage'
+					},
+					{
+						'image': '/img/projects/web/allways/02_allways.jpg',
+						'alt': 'More of All-Ways’ Homepage'
+					},
+					{
+						'image': '/img/projects/web/allways/03_allways.jpg',
+						'alt': 'Bottom of All-Ways’ Homepage'
+					}
+				]
+			},
+			{
+				'client': 'Johnson &amp; Johnson',
+				'title': 'Janssen One News Portal',
+				'description': '<p>One-stop shop for all Janssen related news.</p>',
+				'image': '/img/projects/web/janssenone/janssenone_phone.png',
+				'thumb': '/img/projects/web/thumbs/11_janssenone_tb.jpg',
+				'images': [
+					{
+						'image': '/img/projects/web/janssenone/01_janssenone_home.png',
+						'alt': 'Janssen One Homepage'
+					},
+					{
+						'image': '/img/projects/web/janssenone/02_janssenone_home.png',
+						'alt': 'More of Janssen One Homepage'
+					}
+				]
+			},
+			{
+				'client': 'Orencia',
+				'title': 'Re-contact Emails',
+				'description': '<p>A series of HTML emails designed to re-establish contact with existing patients. Starting with a soft sell without any mentions of the drug and a focus on the challenges of a typical RA patient, the series gradually becomes more branded in order to get the message across. The design for these emails was a proud winner of Graphic Design USA Web Award in 2013 for pharmaceutical advertising.</p>',
+				'image': '/img/projects/web/orencia/orencia_small.jpg',
+				'thumb': '/img/projects/web/thumbs/12_orencia_tb.jpg',
+				'images': [
+					{
+						'image': '/img/projects/web/orencia/01_email.gif',
+						'alt': 'First email with water droplet animation'
+					},
+					{
+						'image': '/img/projects/web/orencia/02_email.jpg',
+						'alt': 'Second email in the Orencia series'
+					},
+					{
+						'image': '/img/projects/web/orencia/03_email.jpg',
+						'alt': 'Final email in the Orencia series'
+					}
+				]
 			}
 		],
 		'type': 'web'
