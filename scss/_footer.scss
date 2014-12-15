@@ -1,0 +1,90 @@
+footer{
+	padding-bottom: 1.25em;
+	background-color: #fcf2dc;
+	font-size: 0.8125em;
+	text-align: center;
+
+	.bow{
+		width: 2em;
+		padding: 0 0.3125em;
+		vertical-align: middle;
+	}
+}
+
+.social{
+	height: 67 / (16 * 1.1) * 1em;
+	padding: 0;
+	border-top: 1px solid #ffc8d7;
+	border-bottom: 10px solid #ffc8d7;
+	margin: 0;
+	background: #f492ab;
+
+	.icon{
+		display: inline-block;
+		border-right: 1px solid #ffc8d7;
+
+		&:first-child{
+			border-left: 1px solid #ffc8d7;
+		}
+	}
+
+	.icon a{
+		position: relative;
+		display: block;
+		width: 32px;
+		height: 32px;
+		padding: 11px 20px;
+
+		overflow: hidden;
+
+		text-indent: 500%;
+
+		&::before
+		{
+			content: ' ';
+
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 32px;
+			height: 32px;
+			margin-top: -16px;
+			margin-left: -16px;
+
+			background: transparent url(../img/icon/sm.png) no-repeat 0 0;
+		}
+	}
+
+	.icon.twitter a{
+		width: 29px;
+		height: 25px;
+		padding: 14.5px 21.5px;
+
+		&::before{
+			width: 29px;
+			height: 25px;
+			margin-top: -12.5px;
+			margin-left: -14.5px;
+
+			background-position: -33px 0;
+		}
+	}
+
+	.icon.linkedin a{
+		&::before{
+			background-position: -63px 0;
+		}
+	}
+
+	.icon.deviantart a{
+		width: 44px;
+		padding: 11px 14px;
+
+		&::before{
+			width: 44px;
+			margin-left: -22px;
+
+			background-position: -95px 0;
+		}
+	}
+}

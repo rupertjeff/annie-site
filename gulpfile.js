@@ -38,13 +38,25 @@
 				'./bower/angular-resource/angular-resource.min.js.map',
 				'./bower/angular-route/angular-route.js',
 				'./bower/angular-route/angular-route.min.js',
-				'./bower/angular-route/angular-route.min.js.map'
+				'./bower/angular-route/angular-route.min.js.map',
+				'./bower/angular-sanitize/angular-sanitize.js',
+				'./bower/angular-sanitize/angular-sanitize.min.js',
+				'./bower/angular-sanitize/angular-sanitize.min.js.map'
 			],
 			'./public/js/vendor/angular/file-upload': [
 				'./bower/ng-file-upload/angular-file-upload.js',
 				'./bower/ng-file-upload/angular-file-upload.min.js',
 				'./bower/ng-file-upload/angular-file-upload-shim.js',
 				'./bower/ng-file-upload/angular-file-upload-shim.min.js'
+			],
+			'./public/js/vendor/jquery': [
+				'./bower/jquery/dist/jquery.js',
+				'./bower/jquery/dist/jquery.min.js',
+				'./bower/jquery/dist/jquery.min.map'
+			],
+
+			'./public/js/vendor/underscore': [
+				'./bower/underscore/underscore.js'
 			]
 		};
 

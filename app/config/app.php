@@ -122,6 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		'AnnieDigital\Support\AnnieServiceProvider',
+
 	),
 
 	/*

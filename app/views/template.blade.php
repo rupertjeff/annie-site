@@ -3,6 +3,8 @@
 
 	<head>
 		<title>@yield('pageTitle', 'AnnieDigital')</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="favicon.ico">
 
 		@section('styles')
 		{{ HTML::style('http://fonts.googleapis.com/css?family=Molle:400italic|Raleway:400,700') }}
@@ -10,9 +12,12 @@
 		{{ HTML::style('css/main.css') }}
 		@show
 		@section('scripts')
+		{{ HTML::script('js/vendor/jquery/jquery.min.js') }}
+		{{ HTML::script('js/vendor/underscore/underscore.js') }}
 		{{ HTML::script('js/vendor/angular/angular.min.js') }}
 		{{ HTML::script('js/vendor/angular/angular-resource.min.js') }}
 		{{ HTML::script('js/vendor/angular/angular-route.min.js') }}
+		{{ HTML::script('js/vendor/angular/angular-sanitize.min.js') }}
 		@show
 	</head>
 

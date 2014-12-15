@@ -1,11 +1,29 @@
-<section id="portfolio">
-	<nav id="portfoilo-filters">
-		<a class="web current" href="">Web</a>
-		<a class="mobile" href="">Mobile</a>
-		<a class="photo" href="">Photo</a>
-		<a class="art" href="">Art</a>
-		<a class="anime" href="">Anime</a>
-		<a class="food" href="">Yums!</a>
+<section class="portfolio" id="portfolio" ng-controller="PortfolioController">
+	<nav class="portfolio-filters" id="portfolio-filters">
+		@include('partials.portfolio.tag')
 	</nav>
-	<a class="btn btn--cta more-portfolio" href="">More Please!</a>
+	<div class="project-groups" id="projects">
+		@include('partials.portfolio.project-group')
+	</div>
+	{{--<noscript>
+		<nav id="portfolio-filters">
+		@foreach ($tags as $tag)
+			<a class="tag {{ $tag->uri }} js-tag js-tag-{{ $tag->uri }}" href="#{{ $tag->uri }}">{{{ $tag->name }}}</a>
+		@endforeach
+		</nav>
+		<div id="projects" class="project-groups">
+		@foreach ($tags as $tag)
+			<div id="{{ $tag->uri }}" class="project-group">
+			@foreach ($tag->projects as $project)
+				<div class="project">
+					{{{ $project->name }}}
+				</div>
+			@endforeach
+			</div>
+			@if (8 < $tag->projects->count())
+			<button class="btn btn--cta js-load-more">More Please!</button>
+			@endif
+		@endforeach
+		</div>
+	</noscript>--}}
 </section>

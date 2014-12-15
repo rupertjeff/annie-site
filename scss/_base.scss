@@ -1,0 +1,104 @@
+body{
+	overflow-x: hidden;
+	color: $faded-pink;
+	font: 1.1em/1.28 'Raleway', sans-serif;
+}
+
+a{
+	text-decoration: none;
+}
+
+h1{
+	font: 400 italic 2em/1.28 'Molle', cursive;
+
+	@media screen and (min-width: 45em){
+		font-size: 2.75em;
+	}
+}
+
+.btn{
+	display: inline-block;
+	padding: 0.625em 2em;
+	background-color: transparent;
+	background-position: 0 3em;
+	background-repeat: no-repeat;
+	transition: 0.3s;
+	transition-timing-function: ease;
+
+	&:hover, &:active{
+		background-position: 0 0;
+	}
+}
+
+button.btn{
+	line-height: 1.28;
+}
+
+.btn--cta{
+	padding: .625em 2em;
+	border: 1px solid $white;
+	border-radius: 1px;
+	color: $white;
+
+	&:hover, &:active{
+		background-image: linear-gradient(to top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.3) 100%);
+	}
+
+	&[disabled]:hover, &[disabled]:active{
+		background-image: none;
+	}
+}
+
+.btn--pink{
+	border-color: $pink;
+	color: $pink;
+
+	&:hover, &:active{
+		background-image: linear-gradient(to top, transparentize($pink, 0.7) 0%, transparentize($pink, 0.7) 100%);
+		border-color: darken($pink, 10%);
+		color: darken($pink, 10%);
+	}
+}
+
+.bow{
+	display: inline-block;
+	width: 8%;
+	height: 2em;
+	min-width: 65px;
+}
+
+.bow-top{
+	padding-top: 1.25em;
+}
+
+.bow-bottom{
+	padding-bottom: 1.25em;
+}
+
+.bow-path{
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	animation: dash 6s linear forwards;
+}
+
+.close{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0.5em;
+	height: 0.5em;
+
+	background-color: $pink;
+	color: $white;
+	cursor: pointer;
+	font-size: 5em;
+	line-height: 0.35em;
+}
+
+.container{
+	margin: 0 auto;
+}
+
+:-moz-ui-invalid:not(output){
+	box-shadow: none;
+}

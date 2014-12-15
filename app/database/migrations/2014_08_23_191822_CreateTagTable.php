@@ -17,6 +17,7 @@ class CreateTagTable extends Migration {
 			$table->increments('id');
 
 			$table->string('name')->unique();
+			$table->string('uri');
 			$table->integer('sort')->default(0)->index();
 
 			$table->softDeletes();

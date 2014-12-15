@@ -1,4 +1,6 @@
-'use strict';
+;(function ()
+{
+	'use strict';
 
 var annieApp = angular.module('AnnieDigital', [
 	'ngRoute'
@@ -16,7 +18,7 @@ annieApp.config([
 ]);
 
 
-'use strict';
+	'use strict';
 
 var annieServices = angular.module('annieServices', ['ngResource']);
 
@@ -33,7 +35,7 @@ annieServices.factory('Tags', ['$resource', function ($resource)
 	})
 }]);
 
-var annieControllers = angular.module('annieControllers', []);
+	var annieControllers = angular.module('annieControllers', []);
 
 annieControllers.controller('TagController', ['$scope',
 	function ($scope)
@@ -42,3 +44,4 @@ annieControllers.controller('TagController', ['$scope',
 	}
 ]);
 
+}());

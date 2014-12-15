@@ -7,9 +7,9 @@ class MainController extends BaseController {
 		return View::make('main');
 	}
 
-	public function admin()
-	{
-		return View::make('admin');
-	}
+//	public function admin()
+//	{
+//		return View::make('admin');
+//	}
 
 }
