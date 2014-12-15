@@ -19,11 +19,26 @@ angular.module('AnnieDirectives').directive('adDetails', function ()
 		'restrict': 'A',
 		'link': function (scope, element, attrs)
 		{
-			var selector = attrs['adCloseDetails'] || '[ad-details]';
+			var selector = attrs['adCloseDetails'] || '[ad-details]',
+				animDuration = 500;
 
 			element.on('click', function ()
 			{
-				$(selector).detach();
+				var $item = $(selector);
+				$('html, body').animate({
+					'scrollTop': $('.project-groups').offset().top + 'px'
+				}, {
+					'duration': animDuration
+				});
+				$item.animate({
+					'height': 0
+				}, {
+					'duration': animDuration,
+					'complete': function ()
+					{
+						$item.detach();
+					}
+				});
 			});
 		}
 	};
