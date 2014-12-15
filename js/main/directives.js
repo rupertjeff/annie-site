@@ -6,7 +6,7 @@ angular.module('AnnieDirectives').directive('adDetails', function ()
 		'restrict': 'A',
 		'transclude': true,
 
-		'templateUrl': function (element, attrs)
+		'templateUrl': function ()
 		{
 			var type = $('.project-group.current').data('type') || 'default';
 
@@ -20,13 +20,27 @@ angular.module('AnnieDirectives').directive('adDetails', function ()
 		'link': function (scope, element, attrs)
 		{
 			var selector = attrs['adCloseDetails'] || '[ad-details]',
-				animDuration = 500;
+				scrollSelector = attrs['closeScrollTo'] || '.project-groups',
+				animDuration = 500,
+				portfolio = angular.element('#portfolio'),
+				portfolioScope = portfolio.$scope,
+				projectSelector = angular.element('[ad-detail-view]').attr('ad-detail-view');
 
 			element.on('click', function ()
 			{
-				var $item = $(selector);
+				var $item = angular.element(selector),
+					scrollOffset = 0;
+
+				if ('self' === scrollSelector)
+				{
+					scrollOffset = angular.element(projectSelector + '.current').offset().top;
+				}
+				else
+				{
+					scrollOffset = $(scrollSelector).offset().top;
+				}
 				$('html, body').animate({
-					'scrollTop': $('.project-groups').offset().top + 'px'
+					'scrollTop': scrollOffset + 'px'
 				}, {
 					'duration': animDuration
 				});
@@ -37,6 +51,7 @@ angular.module('AnnieDirectives').directive('adDetails', function ()
 					'complete': function ()
 					{
 						$item.detach();
+						portfolioScope.clearProject();
 					}
 				});
 			});
@@ -65,7 +80,7 @@ angular.module('AnnieDirectives').directive('adDetails', function ()
 
 		element.on('click', selector, function ()
 		{
-			var $this = $(this),
+			var $this = angular.element(this),
 				$items = element.find(selector),
 				clickedIndex = $items.index($this),
 				perRow = getPerRow(element, $this),
@@ -88,7 +103,7 @@ angular.module('AnnieDirectives').directive('adDetails', function ()
 
 		$($window).on('resize', function ()
 		{
-			var $this = $(this),
+			var $this = angular.element(this),
 				$details = element.find('[ad-details]'),
 				$items, $current, clickedIndex, perRow, numRows, indexAfter, $afterItem;
 

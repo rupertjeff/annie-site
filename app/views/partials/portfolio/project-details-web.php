@@ -1,5 +1,5 @@
 <figcaption class="details">
-	<a class="close" ad-close-details ng-click="clearProject()">&times;</a>
+	<a class="close" ad-close-details data-close-scroll-to="self">&times;</a>
 	<div class="project-client" ng-bind-html="currentProject.client"></div>
 	<div class="project-title" ng-bind-html="currentProject.title"></div>
 	<?php include('project-images.php'); ?>
@@ -66,5 +66,5 @@
 			</div>
 		</div>
 	</div>
-	<a class="btn btn-cta" ad-close-details ng-click="clearProject()">Close Project</a>
+	<a class="btn btn-cta" ad-close-details data-close-scroll-to="self">Close Project</a>
 </figcaption>
