@@ -18,7 +18,7 @@ class Repository extends BaseRepository implements Contact {
 	 *
 	 * @return \AnnieDigital\Support\Entity
 	 */
-	protected function transform(BaseModel $item)
+	public function transform($item)
 	{
 		return new Entity(
 			$item->name,
@@ -33,7 +33,7 @@ class Repository extends BaseRepository implements Contact {
 	 *
 	 * @return void
 	 */
-	protected function setData(BaseModel $item, array $fields)
+	public function setData($item, array $fields)
 	{
 		$item->name     = $fields['name'];
 		$item->email    = $fields['email'];

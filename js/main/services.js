@@ -6,3 +6,10 @@ angular.module('AnnieServices').factory('Tags', [
 		return $resource('/api/v1/tags/:tagId');
 	}
 ]);
+
+angular.module('AnnieServices').factory('Projects', [
+	'$resource', function ($resource)
+	{
+		return $resource('/api/v1/projects/:projectId');
+	}
+]);

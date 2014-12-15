@@ -17,9 +17,6 @@ class ApiController extends BaseController {
 	 */
 	protected $statusCode = 200;
 
-	/**
-	 * @param CommandBus $commandBus
-	 */
 	public function __construct(CommandBus $commandBus)
 	{
 		$this->commandBus = $commandBus;

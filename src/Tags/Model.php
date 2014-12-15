@@ -1,5 +1,6 @@
 <?php namespace AnnieDigital\Tags;
 
+use Config;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
@@ -20,7 +21,7 @@ class Model extends Eloquent {
 	{
 		$img = $this->getAttribute('image');
 
-		return url('img/icons/' . $img);
+		return url(Config::get('images.tagImageUrl') . $img);
 	}
 
 }

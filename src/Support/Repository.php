@@ -18,10 +18,12 @@ abstract class Repository implements RepositoryInterface {
 	 * @var string
 	 */
 	protected $model;
+
 	/**
 	 * @var string
 	 */
-	protected $by = 'sort';
+	protected $by = '';
+
 	/**
 	 * @var string
 	 */
@@ -32,24 +34,16 @@ abstract class Repository implements RepositoryInterface {
 	 *
 	 * @return Entity
 	 */
-	abstract protected function transform(Model $item);
+	abstract public function transform($item);
 
 	/**
 	 * @param array|ArrayableInterface $items
 	 *
 	 * @return Collection
 	 */
-	protected function multiTransform($items = [])
+	public function multiTransform($items = [])
 	{
-		if ( ! $items instanceof Collection)
-		{
-			if ($items instanceof ArrayableInterface)
-			{
-				$items = $items->toArray();
-			}
-
-			$items = new Collection($items);
-		}
+		$items = $this->getItems($items);
 
 		$transformed = [];
 		foreach ($items as $item)
@@ -100,7 +94,7 @@ abstract class Repository implements RepositoryInterface {
 	 */
 	public function order($by, $sort = 'asc')
 	{
-		$this->by = $by;
+		$this->by   = $by;
 		$this->sort = $sort;
 
 		return $this;
@@ -139,11 +133,11 @@ abstract class Repository implements RepositoryInterface {
 
 	/**
 	 * @param Model $item
-	 * @param array        $fields
+	 * @param array $fields
 	 *
 	 * @return void
 	 */
-	abstract protected function setData(Model $item, array $fields);
+	abstract protected function setData($item, array $fields);
 
 	/**
 	 * @param mixed $id
@@ -194,12 +188,37 @@ abstract class Repository implements RepositoryInterface {
 	 */
 	protected function processOrder(Builder $query)
 	{
-		$query->orderBy($this->by, $this->sort);
+		if ( ! empty($this->by))
+		{
+			$query->orderBy($this->by, $this->sort);
+		}
 
-		$this->by = 'sort';
+		$this->by   = '';
 		$this->sort = 'asc';
 
 		return $query;
+	}
+
+	/**
+	 * @param array|ArrayableInterface $items
+	 *
+	 * @return array|Collection
+	 */
+	protected function getItems($items)
+	{
+		if ( ! $items instanceof Collection)
+		{
+			if ($items instanceof ArrayableInterface)
+			{
+				$items = $items->toArray();
+			}
+
+			$items = new Collection($items);
+
+			return $items;
+		}
+
+		return $items;
 	}
 
 }

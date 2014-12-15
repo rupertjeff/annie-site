@@ -20,6 +20,7 @@ class AnnieServiceProvider extends ServiceProvider {
 		$this->app->bind('AnnieDigital\Contracts\Commanding\Translator', 'AnnieDigital\Commanding\DefaultTranslator');
 
 		$this->app->bind('AnnieDigital\Contracts\Repositories\Contact', 'AnnieDigital\Contact\Repository');
+		$this->app->bind('AnnieDigital\Contracts\Repositories\Images', 'AnnieDigital\Images\Repository');
 		$this->app->bind('AnnieDigital\Contracts\Repositories\Projects', 'AnnieDigital\Projects\Repository');
 		$this->app->bind('AnnieDigital\Contracts\Repositories\Tags', 'AnnieDigital\Tags\Repository');
 

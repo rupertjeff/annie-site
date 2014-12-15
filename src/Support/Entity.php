@@ -4,6 +4,11 @@ use ArrayAccess;
 use Illuminate\Support\Contracts\ArrayableInterface;
 use Illuminate\Support\Contracts\JsonableInterface;
 
+/**
+ * Class Entity
+ *
+ * @package AnnieDigital\Support
+ */
 abstract class Entity implements ArrayAccess, ArrayableInterface, JsonableInterface {
 
 	/**
