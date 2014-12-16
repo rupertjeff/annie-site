@@ -4,9 +4,13 @@
 	text-align: center;
 
 	.btn{
+		clear: both;
+		display: block;
+		width: 120px;
 		border: 1px solid $pink;
-		margin-top: 1.5em;
+		margin: 1.5em auto 0 auto;
 		color: $pink;
+		cursor: pointer;
 
 		&:hover, &:active{
 			color: $white;
@@ -157,7 +161,7 @@
 
 .details{
 	position: relative;
-	padding: 2em 1em;
+	padding: 2em 0;
 }
 
 .project-client{
@@ -174,7 +178,7 @@
 	position: relative;
 	display: none;
 	height: (654 / (16 * 1.1)) * 1em;
-	padding-bottom: 2em;
+	padding: 2em 1em;
 	overflow: hidden;
 
 	line-height: 65em;
@@ -197,7 +201,7 @@
 
 		position: absolute;
 		top: 50%;
-		left: 0;
+		left: 1em;
 		width: 0;
 		height: 0;
 		border: {
@@ -222,7 +226,7 @@
 		&::before
 		{
 			left: auto;
-			right: 0;
+			right: 1em;
 			border: {
 				left: 1.25em solid $pink;
 				right: 0;
@@ -244,9 +248,42 @@
 }
 
 .project-description{
-	padding: 1em 1.5em 0;
+	padding: 1em 1em 2em;
 
 	text-align: left;
+}
+
+.project-problem, .project-process, .project-solution{
+		display: block;
+		clear: both;
+		text-align: left;
+
+		&::after{
+			content: ' ';
+			display: block;
+			clear: both;
+		}
+}
+
+.project-problem-title, .project-process-title, .project-solution-title, .project-solution-tag{
+	font: 400 italic 2em/1.28 'Molle', cursive;
+	font-size: 2em;
+}
+
+.project-problem-details, .project-process-details{
+	padding: 0 1em;
+}
+
+.project-process{
+	padding-top: 4em;
+	color: $white;
+	background-color: #6a4f49;
+}
+
+.project-process-bottom{
+	border: 5px solid $pink;
+	clear: both;
+	background-color: $white;
 }
 
 @media screen and (min-width: 35em){
@@ -303,14 +340,15 @@
 
 	.project-description{
 		width: 50%;
-		padding-bottom: 2em;
+		padding: 1em 3em 0;
 		float: left;
 	}
 
 	.details aside{
-		width: 30%;
-		padding-bottom: 2em;
+		width: 35%;
+		padding: 2em 0;
 		float: right;
+		text-align: left;
 	}
 
 	.project:nth-child(3n-1){
@@ -326,6 +364,66 @@
 			margin: 3em 1em -3em;
 		}
 	}
+
+	.project-problem{
+
+		img{
+			width: 49%;
+			float: left;
+		}
+
+		.project-problem-details{
+			width: 46%;
+			float: right;
+		}
+	}
+
+	.project-process{
+
+		.project-process-top{
+
+			.project-process-details{
+				width: 46%;
+				float: left;
+			}
+
+			img{
+				width: 49%;
+				padding-bottom: 4em;
+				float: right;
+			}
+		}
+
+		.project-process-row{
+			border-bottom: 5px solid $pink;
+			text-align: justify;
+
+			&:last-child{
+				border-bottom: 0 none;
+			}
+
+			&::after{
+				content: ' ';
+				display: inline-block;
+				width: 100%;
+				height: 0;
+				overflow: hidden;
+			}
+
+			img{
+				padding: 10px;
+			}
+
+			.project-process-image{
+				display: inline-block;
+
+				&:nth-child(even){
+					border-left: 5px solid $pink;
+				}
+			}
+		}
+	}
+
 }
 
 @media screen and (min-width: 68em){
