@@ -120,6 +120,73 @@ $scope.tags = [
 						'image': '/img/projects/web/rutgers/03_wireframes.jpg',
 						'alt': 'Rutgers Facilities wireframes'
 					}
+				],
+				'problem': {
+					'image': {
+						'file': '/img/projects/web/rutgers/new/01-old-site.png',
+						'alt': 'The old Rutgers Facilities website'
+					},
+					'text': {
+						'tag': 'The Problem',
+						'title': 'Original Site',
+						'content': '<p>The old Rutgers University Facilities &amp; Capital Planning site left a lot to be desired. From the confusing double row navigation to the million links on every page, looking for information on the site is like looking for a needle in a massive haystack.</p><p>With content heavy websites, it is important to establish the goal of every page, and to organize all the content in a meaningful, digestible way. In our redesign, we want to: </p><ol><li>Establish what UFCP does and what they have to offer.</li><li>Give relevant facility information to students, parents, and staff, and</li><li>Provide instructions to commercial contractors regarding facility projects.</li>'
+					}
+				},
+				'process': [
+					{
+						'text': {
+							'tag': 'The Process',
+							'title': 'Sketches, Wireframes, Style Tiles &amp; Prototype',
+							'content': '<p>Not everyone understands what UFCP does for the University, so we wanted to quickly and clearly outline the department’s missions right on the homepage.</p><p>Combined with quick links to the most used sections of the website, such as Maintenance Requests and the Housing application, the user is never lost.</p>'
+						},
+						'image': {
+							'file': '/img/projects/web/rutgers/new/02-ipad-tile.png',
+							'alt': 'Style tile in an iPad'
+						}
+					},
+					{
+						'first': {
+							'file': '/img/projects/web/rutgers/new/03-sketches.jpg',
+							'alt': 'Sketches from the wireframing process'
+						},
+						'second': {
+							'file': '/img/projects/web/rutgers/new/04-wireframes.jpg',
+							'alt': 'Final wireframes'
+						}
+					},
+					{
+						'first': {
+							'file': '/img/projects/web/rutgers/new/05-icons.jpg',
+							'alt': 'Various icons used throughout the site'
+						},
+						'second': {
+							'file': '/img/projects/web/rutgers/new/06-callouts.jpg',
+							'alt': 'Callouts from the homepage'
+						}
+					}
+				],
+				'solution': [
+					{
+						'image': {
+							'file': '/img/projects/web/rutgers/new/07-iphone-final.png',
+							'alt': 'Final design on an iPhone'
+						},
+						'text': {
+							'tag': 'The Solution',
+							'title': 'Simplified Navigation',
+							'content': '<p>Are you a student looking for housing? Are you a faculty member looking for maintenance request? Instead of searching through 100 links on one page, 1 click lands you in the appropriate section of the website with information related to what you’re looking for.</p>'
+						}
+					},
+					{
+						'text': {
+							'title': 'It’s All About Details',
+							'content': '<p>From handcrafted icons on the homepage to the carefully selected photos for each page, we give the user subtle hints as to where they should click. Important content does not have to be <strong>ALL BOLD AND CAPITALIZED</strong> and scream at the user to be prominent. Less is more.</p>'
+						},
+						'image': {
+							'file': '/img/projects/web/rutgers/new/08-laptop-final.png',
+							'alt': 'Final design on a laptop'
+						}
+					}
 				]
 			},
 			{
