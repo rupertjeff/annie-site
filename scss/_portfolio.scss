@@ -162,6 +162,7 @@
 .details{
 	position: relative;
 	padding: 2em 0;
+	font-size: 0.94em;
 }
 
 .project-client{
@@ -184,6 +185,10 @@
 	line-height: 65em;
 	text-align: center;
 	user-select: none;
+}
+
+.low-res-only{
+	display: block;
 }
 
 .arrow{
@@ -255,6 +260,7 @@
 
 .project-problem, .project-process, .project-solution{
 		display: block;
+		padding: 1em 1.5em;
 		clear: both;
 		text-align: left;
 
@@ -265,17 +271,29 @@
 		}
 }
 
+.project-problem{
+	background-color: #fcf2dc;
+}
+
+.project-process-top img{
+	display: none;
+}
+
 .project-problem-title, .project-process-title, .project-solution-title, .project-solution-tag{
 	font: 400 italic 2em/1.28 'Molle', cursive;
 	font-size: 2em;
 }
 
-.project-problem-details, .project-process-details{
-	padding: 0 1em;
+.project-problem-tag, .project-process-tag{
+	display: inline-block;
+	padding: 4px 5px 2px;
+	font-size: 0.675em;
+	text-transform: uppercase;
+	color: $white;
+	background-color: $pink;
 }
 
 .project-process{
-	padding-top: 4em;
 	color: $white;
 	background-color: #6a4f49;
 }
@@ -284,6 +302,16 @@
 	border: 5px solid $pink;
 	clear: both;
 	background-color: $white;
+
+	display: none;
+}
+
+.project-solution-top{
+	padding: 0;
+
+	.project-solution-details{
+		padding-top: 1em;
+	}
 }
 
 @media screen and (min-width: 35em){
@@ -312,6 +340,7 @@
 			margin: 3em 1em -3em;
 		}
 	}
+
 }
 
 @media screen and (min-width: 52em){
@@ -336,6 +365,10 @@
 
 	.project-images{
 		display: block;
+	}
+
+	.low-res-only{
+		display: none;
 	}
 
 	.project-description{
@@ -366,6 +399,7 @@
 	}
 
 	.project-problem{
+		padding: 2em 0 0 0;
 
 		img{
 			width: 49%;
@@ -373,14 +407,17 @@
 		}
 
 		.project-problem-details{
-			width: 46%;
+			width: 42%;
+			padding: 0 2em;
 			float: right;
 		}
 	}
 
 	.project-process{
+		padding: 0;
 
 		.project-process-top{
+			padding: 2em 0 0 2em;
 
 			.project-process-details{
 				width: 46%;
@@ -388,6 +425,7 @@
 			}
 
 			img{
+				display: block;
 				width: 49%;
 				padding-bottom: 4em;
 				float: right;
@@ -396,18 +434,10 @@
 
 		.project-process-row{
 			border-bottom: 5px solid $pink;
-			text-align: justify;
+			text-align: center;
 
 			&:last-child{
 				border-bottom: 0 none;
-			}
-
-			&::after{
-				content: ' ';
-				display: inline-block;
-				width: 100%;
-				height: 0;
-				overflow: hidden;
 			}
 
 			img{
@@ -421,6 +451,58 @@
 					border-left: 5px solid $pink;
 				}
 			}
+		}
+	}
+
+	.project-solution{
+		padding: 0;
+	}	
+
+	.project-solution-top{
+		position: relative;
+		background-color: $pink;
+		color: $white;
+
+		&::after{
+			content: ' ';
+			display: inline-block;
+			height: 0;
+			width: 100%;
+		}
+
+		img{
+			display: inline-block;
+			position: absolute;
+			bottom: -4.5em;
+			left: 2em;
+			width: 48%;
+			padding-top: 4em;
+			z-index: 10;
+		}
+
+		.project-solution-details{
+			display: block;
+			width: 42%;
+			padding: 2em;
+			float: right;
+		}
+	}
+
+	.project-solution-bottom{
+		position: relative;
+		padding: 5em 2em 0 2em;
+		text-align: right;
+
+		.project-solution-details{
+			position: absolute;
+			top: 6em;
+			left: 2em;
+			width: 38%;
+			text-align: left;
+		}
+
+		img{
+			margin-top: -4em;
 		}
 	}
 
@@ -455,5 +537,17 @@
 		~ .project:nth-child(even){
 			margin: 3em 1em -3em;
 		}
+	}
+
+	.project-process-bottom{
+		display: block;
+
+		.project-solution-details{ 
+			width: 42%;
+		}
+	}
+
+	.project-solution-top{
+		padding: 2em;
 	}
 }
