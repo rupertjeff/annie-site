@@ -6,6 +6,7 @@ function PortfolioController($scope, Tags, Projects)
 	$scope.switchTag = function (tag)
 	{
 		$scope.currentTag = tag;
+		$scope.clearProject();
 	};
 
 	$scope.switchProject = function (project)
