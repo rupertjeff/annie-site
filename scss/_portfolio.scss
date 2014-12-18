@@ -134,6 +134,7 @@
 }
 
 .project{
+	position: relative;
 	width: 12.841em;
 	border: 3px solid $white;
 	margin: 1em auto;
@@ -143,6 +144,11 @@
 
 	> img{
 		display: block;
+	}
+	> figcaption{
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 }
 
@@ -456,7 +462,7 @@
 
 	.project-solution{
 		padding: 0;
-	}	
+	}
 
 	.project-solution-top{
 		position: relative;
@@ -542,7 +548,7 @@
 	.project-process-bottom{
 		display: block;
 
-		.project-solution-details{ 
+		.project-solution-details{
 			width: 42%;
 		}
 	}
