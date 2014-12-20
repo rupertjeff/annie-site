@@ -39,7 +39,7 @@ angular.module('AnnieDirectives').directive('adDetails', function ()
 				{
 					scrollOffset = $(scrollSelector).offset().top;
 				}
-				$('html, body').animate({
+				angular.element('html, body').animate({
 					'scrollTop': scrollOffset + 'px'
 				}, {
 					'duration': animDuration
@@ -127,6 +127,30 @@ angular.module('AnnieDirectives').directive('adDetails', function ()
 	return {
 		'restrict': 'A',
 
+		'link': link
+	};
+}).directive('animateScrollTo', function ()
+{
+	var link = function (scope, element, attrs)
+	{
+		var scrollElement = attrs['animateScrollTo'] || attrs['href'] || 'body',
+			$scrollElem = angular.element(scrollElement),
+			animDuration = attrs['animateDuration'] || 500;
+
+		element.on('click', function ()
+		{
+			angular.element('html,body').animate({
+				'scrollTop': $scrollElem.offset().top
+			}, {
+				'duration': animDuration
+			});
+
+			return false;
+		});
+	};
+
+	return {
+		'restrict': 'A',
 		'link': link
 	};
 });
