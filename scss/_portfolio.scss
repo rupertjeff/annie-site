@@ -184,14 +184,14 @@
 		}
 	}
 
-	&:hover, &:active{
+	&:hover{
 
 		-webkit-transform: scale3d(0.95,0.95,1);
 		transform: scale3d(0.95,0.95,1);
 
 		> img{
 			opacity: 0.2;
-		
+
 		}
 
 		> figcaption{
