@@ -129,7 +129,7 @@ angular.module('AnnieDirectives').directive('adDetails', function ()
 
 		'link': link
 	};
-}).directive('animateScrollTo', function ()
+}).directive('animateScrollTo', function ($window)
 {
 	var link = function (scope, element, attrs)
 	{
@@ -142,7 +142,15 @@ angular.module('AnnieDirectives').directive('adDetails', function ()
 			angular.element('html,body').animate({
 				'scrollTop': $scrollElem.offset().top
 			}, {
-				'duration': animDuration
+				'duration': animDuration,
+
+				'complete': function ()
+				{
+					if (attrs['href'] === scrollElement)
+					{
+						$window.location.hash = attrs['href'];
+					}
+				}
 			});
 
 			return false;
